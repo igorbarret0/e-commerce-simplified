@@ -39,6 +39,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.PUT, "/api/product").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/product").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/api/product/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.POST, "/sales").authenticated()
                         .anyRequest().authenticated()
                 )
